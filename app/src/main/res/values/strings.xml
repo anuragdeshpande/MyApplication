@@ -3,4 +3,21 @@
     <string name="title_food">Food</string>
     <string name="title_ingredients">Ingredients</string>
     <string name="title_settings">Settings</string>
+
+    <string name="backdrop_title">Today</string>
+    <string name="backdrop_subtitle">Excellent day to show your magic!</string>
+
+
+
+
+
+    <!-- Credits -->
+    <string name="credits_main">Icons from <a href="http://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></string>
+
+    <!-- Authors -->
+    <string name="Oliver"><a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Oliver</a></string>
+    <string name="freepik"><a href="http://www.freepik.com" title="Freepik">Freepik</a></string>
+    <string name="overflowMenuIcon">Menu Icon</string>
+    <string name="add_to_fav">Add to Fav</string>
+
 </resources>
