@@ -8,15 +8,17 @@ public class Food {
     private String name;
     private int count;
     private int thumbnail;
+    private String foodID;
 
     public Food(){
 
     }
 
-    public Food(String name, int count, int thumbnail){
+    public Food(String name, int count, int thumbnail, String ID){
         this.name = name;
         this.count = count;
         this.thumbnail = thumbnail;
+        this.foodID = ID;
     }
 
 
@@ -43,5 +45,13 @@ public class Food {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public String getFoodID() {
+        return foodID;
+    }
+
+    public void setFoodID(String foodID) {
+        this.foodID = foodID;
     }
 }

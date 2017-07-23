@@ -18,6 +18,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Ingredients" />
+        <activity android:name=".Settings" />
+        <activity android:name=".Food_Activity"></activity>
+        <activity
+            android:name=".Food_Detailed"
+            android:label="@string/title_activity_food__detailed"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="productiveapps.com.foodplanner.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

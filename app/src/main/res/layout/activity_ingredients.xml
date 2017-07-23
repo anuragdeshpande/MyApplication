@@ -2,33 +2,27 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container_main"
+    android:id="@+id/container_ingredients"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="productiveapps.com.foodplanner.MainActivity">
-
-    <!--<FrameLayout-->
-    <!--android:id="@+id/main_frame"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="0dp"-->
-    <!--android:layout_weight="1">-->
+    tools:context="productiveapps.com.foodplanner.Ingredients">
 
     <include
-    layout="@layout/bottom_navigation"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="bottom"
-    />
+        layout="@layout/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        />
 
     <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar_main"
+        android:id="@+id/appbar_ingredients"
         android:layout_width="match_parent"
         android:layout_height="@dimen/detail_backdrop_height"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/collapsing_toolbar_main"
+            android:id="@+id/collapsing_toolbar_ingredients"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
@@ -43,7 +37,7 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
-                    android:id="@+id/backdrop_main"
+                    android:id="@+id/backdrop_ingredients"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fitsSystemWindows="true"
@@ -61,7 +55,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/love_music_main"
+                        android:id="@+id/love_music_ingredients"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/hey"
@@ -69,7 +63,7 @@
                         android:textSize="@dimen/backdrop_title" />
 
                     <TextView
-                        android:id="@+id/subtitleText_main"
+                        android:id="@+id/subtitleText_ingredients"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/backdrop_subtitle"
@@ -80,7 +74,7 @@
             </RelativeLayout>
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar_main"
+                android:id="@+id/toolbar_ingredients"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
@@ -91,7 +85,7 @@
     </android.support.design.widget.AppBarLayout>
 
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/content_ingredients" />
 
     <!--</FrameLayout>-->
 

@@ -1,26 +1,16 @@
 package productiveapps.com.foodplanner;
 
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.graphics.Rect;
-import android.media.Image;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -28,48 +18,48 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseActivity {
+public class Ingredients extends BaseActivity {
 
     private RecyclerView recyclerView;
-    private FoodAdapter adapter;
-    private List<Food> foodList = new ArrayList<>();
+    private IngredientsAdapter adapter;
+    private List<Food> ingredientList = new ArrayList<>();
 
     @Override
     int getContentViewId() {
-        return R.layout.activity_main;
+        return R.layout.activity_ingredients;
     }
 
     @Override
     int getNavigationMenuItemId() {
-        return R.id.navigation_food;
+        return R.id.navigation_ingredients;
     }
 
     @Override
     protected void showContent() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_ingredients);
         setSupportActionBar(toolbar);
 
         initCollapsingToolbar();
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_main);
-        adapter = new FoodAdapter(this, foodList);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_ingredients);
+        adapter = new IngredientsAdapter(this, ingredientList);
 
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 2);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(this, 3);
         recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(10), true));
+        recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(0), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
         prepareFoodItems();
 
         try{
-            Glide.with(this).load(R.drawable.cover).into((ImageView) findViewById(R.id.backdrop_main));
+            Glide.with(this).load(R.drawable.ingredients_cover).into((ImageView) findViewById(R.id.backdrop_ingredients));
         }catch (Exception e){
             e.printStackTrace();
         }
 
         //click action for cover photo
-        findViewById(R.id.backdrop_main).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.backdrop_ingredients).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //todo show current to make recipe
@@ -79,9 +69,9 @@ public class MainActivity extends BaseActivity {
     }
 
     private void initCollapsingToolbar(){
-        final CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_main);
+        final CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_ingredients);
         collapsingToolbar.setTitle(" ");
-        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar_main);
+        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar_ingredients);
         appBarLayout.setExpanded(true);
 
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener(){
@@ -111,47 +101,47 @@ public class MainActivity extends BaseActivity {
      */
     private void prepareFoodItems() {
         int[] covers = new int[]{
-                R.drawable.food1,
-                R.drawable.food2,
-                R.drawable.food3,
-                R.drawable.food4,
-                R.drawable.food5,
-                R.drawable.food6,
-                R.drawable.food7,
-                R.drawable.food8,
-                R.drawable.food9,
-                R.drawable.food10,
-                R.drawable.food11};
+                R.drawable.bokchoy,
+                R.drawable.cherry_tomatoes,
+                R.drawable.drumsticks,
+                R.drawable.lettuce,
+                R.drawable.mushroom,
+                R.drawable.onion,
+                R.drawable.raddish,
+                R.drawable.rocket_leaves,
+                R.drawable.snake_beans,
+                R.drawable.spinach,
+                R.drawable.spring_onion};
 
-        Food a = new Food("True Romance", 13, covers[0], "001");
-        foodList.add(a);
+        Food a = new Food("Bokchoy", 13, covers[0], "001");
+        ingredientList.add(a);
 
-        a = new Food("Xscpae", 8, covers[1] , "002");
-        foodList.add(a);
+        a = new Food("Cherry Tomatoes", 8, covers[1], "002");
+        ingredientList.add(a);
 
-        a = new Food("Maroon 5", 11, covers[2], "003");
-        foodList.add(a);
+        a = new Food("Drumsticks", 11, covers[2], "003");
+        ingredientList.add(a);
 
-        a = new Food("Born to Die", 12, covers[3], "004");
-        foodList.add(a);
+        a = new Food("Lettuce", 12, covers[3], "004");
+        ingredientList.add(a);
 
-        a = new Food("Honeymoon", 14, covers[4], "005");
-        foodList.add(a);
+        a = new Food("Mushroom", 14, covers[4], "005");
+        ingredientList.add(a);
 
-        a = new Food("I Need a Doctor", 1, covers[5], "006");
-        foodList.add(a);
+        a = new Food("Onions", 1, covers[5], "006");
+        ingredientList.add(a);
 
-        a = new Food("Loud", 11, covers[6], "007");
-        foodList.add(a);
+        a = new Food("Raddish", 11, covers[6], "007");
+        ingredientList.add(a);
 
-        a = new Food("Legend", 14, covers[7], "008");
-        foodList.add(a);
+        a = new Food("Rocket Leaves", 14, covers[7], "008");
+        ingredientList.add(a);
 
-        a = new Food("Hello", 11, covers[8], "009");
-        foodList.add(a);
+        a = new Food("Snake Beans", 11, covers[8], "009");
+        ingredientList.add(a);
 
-        a = new Food("Greatest Hits", 17, covers[9], "010");
-        foodList.add(a);
+        a = new Food("Spring Onion", 17, covers[9], "010");
+        ingredientList.add(a);
 
         adapter.notifyDataSetChanged();
     }
